@@ -25,20 +25,20 @@ public class MatrizesArmarios {
 
         for (int j = 0; j < armarios[0].length; j++) {
             for (int i = 0; i < armarios.length; i++) {
-                //System.out.printf("%d ", armarios[i][j]);
+
                 if (armarios[i][j] == 0) {
                     grupo++;
+                }else {
+                    grupo = 0; // zero a sequencia
                 }
 
                 if (grupo == quantidade) {
                     achou = true;
-                    numeroColuna = j + 1;
-                    numeroAndar = i + 1;
                     System.out.println("Achou par");
                     System.out.printf("j: %d%n", j + 1);
                     System.out.printf("i: %d%n", i + 1);
-                    armarios[i][j] = 1;
-                    armarios[i - 1][j] = 1;
+                    armarios[i][j] = 999;
+                    armarios[i - 1][j] = 999;
                     break;
                 }
             }
